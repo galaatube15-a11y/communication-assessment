@@ -1,0 +1,473 @@
+/* =========================================
+   AACACEA ASSESSMENT
+========================================= */
+
+.assessment {
+    position: relative;
+    min-height: 100vh;
+    padding: 90px 5% 110px;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(255, 255, 255, 0.35),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 85%,
+            rgba(0, 90, 40, 0.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #dff5e4,
+            #b7e6c2,
+            #eaf8ed
+        );
+
+    overflow: hidden;
+}
+
+
+/* Decorative circles */
+
+.assessment::before {
+    content: "";
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.20);
+
+    top: -180px;
+    left: -180px;
+}
+
+
+.assessment::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: rgba(22, 120, 55, 0.08);
+
+    right: -220px;
+    bottom: -250px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.assessment-header {
+    position: relative;
+    z-index: 2;
+
+    max-width: 900px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+
+.assessment-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #08752f,
+        #21a64e
+    );
+
+    color: white;
+
+    font-size: 32px;
+    font-weight: bold;
+
+    box-shadow:
+        0 10px 25px rgba(0, 100, 40, 0.25);
+}
+
+
+.assessment-header h1 {
+    margin: 0 0 15px;
+
+    color: #075c29;
+
+    font-size: 42px;
+    font-weight: 800;
+
+    line-height: 1.2;
+}
+
+
+.assessment-header p {
+    max-width: 800px;
+
+    margin: auto;
+
+    color: #315b42;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   MAIN FORM CARD
+========================================= */
+
+#assessmentForm {
+
+    position: relative;
+    z-index: 3;
+
+    max-width: 1450px;
+
+    margin: auto;
+
+    padding: 35px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-radius: 26px;
+
+    box-shadow:
+        0 25px 60px rgba(0, 80, 30, 0.18);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+
+/* =========================================
+   QUESTION CARD
+========================================= */
+
+.question {
+
+    background: #ffffff;
+
+    padding: 22px;
+
+    border-radius: 17px;
+
+    border: 1px solid #d7eadb;
+
+    box-shadow:
+        0 6px 18px rgba(0, 80, 30, 0.07);
+
+    display: flex;
+
+    flex-direction: column;
+
+    transition: all 0.25s ease;
+}
+
+
+.question:hover {
+
+    transform: translateY(-3px);
+
+    border-color: #48a961;
+
+    box-shadow:
+        0 12px 28px rgba(0, 90, 35, 0.13);
+}
+
+
+/* Question title */
+
+.question > label:first-child {
+
+    margin-bottom: 13px;
+
+    color: #14532d;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.question input[type="text"],
+.question input[type="tel"],
+.question select,
+.question textarea {
+
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #c8ddcd;
+
+    border-radius: 10px;
+
+    background: #fbfffc;
+
+    color: #244d31;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: all 0.25s ease;
+}
+
+
+.question textarea {
+
+    min-height: 120px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+
+/* Focus */
+
+.question input:focus,
+.question select:focus,
+.question textarea:focus {
+
+    border-color: #16883b;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(22, 136, 59, 0.10);
+}
+
+
+/* =========================================
+   RADIO + CHECKBOX BOX
+========================================= */
+
+.choice-box {
+
+    padding: 14px;
+
+    background: #f0faf2;
+
+    border: 1px solid #d3ead8;
+    border-radius: 12px;
+}
+
+
+.choice-box label {
+
+    display: block;
+
+    margin: 9px 0;
+
+    color: #315b42;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+
+.choice-box input {
+
+    margin-right: 8px;
+
+    accent-color: #138a3d;
+}
+
+
+/* =========================================
+   FULL WIDTH QUESTIONS
+========================================= */
+
+.question.full-width {
+
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
+#assessmentForm button {
+
+    grid-column: 1 / -1;
+
+    justify-self: center;
+
+    width: 330px;
+
+    padding: 16px 25px;
+
+    margin-top: 8px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #075d29,
+            #20a34a
+        );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(20, 130, 55, 0.25);
+
+    transition: all 0.3s ease;
+}
+
+
+#assessmentForm button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(20, 130, 55, 0.35);
+}
+
+
+#assessmentForm button:active {
+
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   SUCCESS MESSAGE
+========================================= */
+
+#successMessage {
+
+    position: relative;
+    z-index: 3;
+
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #08752f;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+
+    #assessmentForm {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        padding: 28px;
+    }
+
+    .assessment-header h1 {
+
+        font-size: 35px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 680px) {
+
+    .assessment {
+
+        padding: 60px 15px 80px;
+    }
+
+
+    .assessment-header h1 {
+
+        font-size: 28px;
+    }
+
+
+    .assessment-header p {
+
+        font-size: 15px;
+    }
+
+
+    #assessmentForm {
+
+        grid-template-columns: 1fr;
+
+        padding: 18px;
+
+        border-radius: 18px;
+
+        gap: 18px;
+    }
+
+
+    .question {
+
+        padding: 18px;
+    }
+
+
+    .question.full-width {
+
+        grid-column: auto;
+    }
+
+
+    #assessmentForm button {
+
+        width: 100%;
+    }
+}
